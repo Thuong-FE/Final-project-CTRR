@@ -2,12 +2,14 @@
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://thuong-fe.github.io/Final-project-CTRR",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "lucide-react": "^0.562.0",
@@ -28,4 +30,5 @@
   "overrides": {
     "vite": "npm:rolldown-vite@7.2.5"
   }
+  
 }

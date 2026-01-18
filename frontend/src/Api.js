@@ -1,5 +1,6 @@
 // Corrected File: src/Api.js (Added missing imports if any, ensured all endpoints)
-const BASE_URL = "http://localhost:8000";
+// Use environment variable or fallback to relative URL for production
+const BASE_URL = import.meta.env.VITE_API_URL || "";
 
 export async function saveGraph(graph) {
   const res = await fetch(`${BASE_URL}/save`, {

@@ -34,21 +34,21 @@ export const ErrorModal = ({ message, onClose }) => {
             <div
                 style={{
                     backgroundColor: '#1e293b',
-                    borderRadius: '20px',
-                    border: '3px solid #ef4444',
-                    padding: '100px',
-                    minWidth: '1000px',
-                    maxWidth: '1200px',
+                    borderRadius: '16px',
+                    border: '2px solid #ef4444',
+                    padding: '32px',
+                    minWidth: '400px',
+                    maxWidth: '600px',
                     boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
                 }}
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Header with icon */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '40px', marginBottom: '60px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                     {/* Error Icon SVG */}
                     <svg
-                        width="120"
-                        height="120"
+                        width="48"
+                        height="48"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="#ef4444"
@@ -62,7 +62,7 @@ export const ErrorModal = ({ message, onClose }) => {
                     </svg>
 
                     <h2 style={{
-                        fontSize: '80px',
+                        fontSize: '28px',
                         fontWeight: 'bold',
                         color: '#f1f5f9',
                         margin: 0
@@ -72,9 +72,9 @@ export const ErrorModal = ({ message, onClose }) => {
                 </div>
 
                 {/* Error content */}
-                <div style={{ marginBottom: '80px' }}>
+                <div style={{ marginBottom: '24px' }}>
                     <p style={{
-                        fontSize: '50px',
+                        fontSize: '18px',
                         color: '#cbd5e1',
                         margin: 0,
                         lineHeight: '1.6'
@@ -91,9 +91,9 @@ export const ErrorModal = ({ message, onClose }) => {
                             backgroundColor: '#ef4444',
                             color: '#fff',
                             fontWeight: 'bold',
-                            fontSize: '45px',
-                            padding: '30px 80px',
-                            borderRadius: '20px',
+                            fontSize: '16px',
+                            padding: '10px 32px',
+                            borderRadius: '8px',
                             border: 'none',
                             cursor: 'pointer',
                             transition: 'background-color 0.2s'

@@ -222,14 +222,15 @@ const App = () => {
         >
           <div style={{
             backgroundColor: '#1e293b',
-            border: '6px solid #22d3ee',
-            borderRadius: '24px',
-            width: '1200px',
-            padding: '80px'
+            border: '4px solid #22d3ee',
+            borderRadius: '16px',
+            width: '800px',
+            maxWidth: '90vw',
+            padding: '48px'
           }}>
-            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', marginBottom: '20px' }}>
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" strokeWidth="2">
+            <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', marginBottom: '16px' }}>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" strokeWidth="2">
                   <circle cx="12" cy="12" r="3" />
                   <circle cx="6" cy="18" r="3" />
                   <circle cx="18" cy="18" r="3" />
