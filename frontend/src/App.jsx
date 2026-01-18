@@ -406,46 +406,6 @@ const App = () => {
           </div>
 
           {/* Edit Selected Element */}
-          {(selectedNodeId || selectedLink) && (
-            <div className="mb-4 pb-4 border-b border-[#3f3f46]">
-              <h3>CHỈNH SỬA</h3>
-              <div className="text-xs text-[#a1a1aa] mb-2">
-                {selectedNodeId && `Đã chọn: Nút ${graph.nodes.find(n => n.id === selectedNodeId)?.label || selectedNodeId}`}
-                {selectedLink && `Đã chọn: Cạnh ${selectedLink.source} → ${selectedLink.target}`}
-              </div>
-              <button
-                onClick={() => {
-                  if (selectedNodeId) {
-                    const node = graph.nodes.find(n => n.id === selectedNodeId);
-                    if (node) {
-                      const newLabel = prompt('Nhập nhãn mới:', node.label || node.id);
-                      if (newLabel !== null) {
-                        setGraph(prev => ({
-                          ...prev,
-                          nodes: prev.nodes.map(n => n.id === selectedNodeId ? { ...n, label: newLabel } : n)
-                        }));
-                      }
-                    }
-                  } else if (selectedLink) {
-                    const newWeight = prompt('Nhập trọng số mới:', selectedLink.weight);
-                    if (newWeight !== null && !isNaN(newWeight)) {
-                      setGraph(prev => ({
-                        ...prev,
-                        links: prev.links.map(l =>
-                          l.source === selectedLink.source && l.target === selectedLink.target
-                            ? { ...l, weight: parseFloat(newWeight) }
-                            : l
-                        )
-                      }));
-                    }
-                  }
-                }}
-                className="w-full bg-[#a855f7] hover:bg-[#9333ea] font-medium px-4 py-2 rounded-lg"
-              >
-                ✏️ Chỉnh Sửa
-              </button>
-            </div>
-          )}
 
           {/* Actions */}
           <div className="mb-4 pb-4 border-b border-[#3f3f46]">
