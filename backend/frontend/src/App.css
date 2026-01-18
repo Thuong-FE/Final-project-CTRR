@@ -1,0 +1,241 @@
+/* Design System: Graph Algorithm Visualizer */
+/* Dark-first, technical, clean aesthetic */
+
+:root {
+  /* Color System */
+  --canvas-bg: #0f172a;
+  --node-bg: #18181b;
+  --node-stroke: #52525b;
+  --node-selected: #22d3ee;
+  --start-node: #22c55e;
+  --end-node: #ef4444;
+  --edge-default: #52525b;
+  --edge-hover: #60a5fa;
+  --path: #eab308;
+  --flow: #06b6d4;
+  --mst: #06b6d4;
+
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+
+  /* UI Colors */
+  --border: #3f3f46;
+  --surface: #18181b;
+  --surface-hover: #27272a;
+  --accent: #22d3ee;
+  --accent-secondary: #a855f7;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --warning: #eab308;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--canvas-bg);
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+/* Main Layout: 3 columns */
+.app-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: var(--canvas-bg);
+}
+
+/* Left Sidebar - Fixed width */
+.sidebar {
+  width: 320px !important;
+  min-width: 320px !important;
+  max-width: 320px !important;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.sidebar h3 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+/* Main Canvas - Flexible, takes remaining space */
+.canvas {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  background: var(--canvas-bg);
+  overflow: hidden;
+}
+
+/* Right Panel - Fixed width */
+.right-panel {
+  width: 380px !important;
+  min-width: 380px !important;
+  max-width: 380px !important;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+.right-panel h2 {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.right-panel h3 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+/* Box sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Form Elements */
+select {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color 200ms ease, background-color 200ms ease;
+}
+
+select:hover {
+  background: #3f3f46;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-primary);
+  transition: border-color 200ms ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  accent-color: var(--accent);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Button variations */
+button {
+  transition: background-color 200ms ease, border-color 200ms ease, transform 75ms ease;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Animation keyframes for algorithm steps */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes highlight {
+  0% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.4);
+  }
+
+  100% {
+    filter: brightness(1);
+  }
+}
+
+.node-processing {
+  animation: pulse 600ms ease-in-out infinite;
+}
+
+.edge-highlight {
+  animation: highlight 400ms ease-out;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
